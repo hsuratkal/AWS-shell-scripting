@@ -1,7 +1,7 @@
 #!/bin/bash
 
 a=10
-dt=$date
+dt=$(date)
 
 echo "Value of variable a is $a"
 
