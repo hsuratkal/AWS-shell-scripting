@@ -5,4 +5,4 @@ dt=date
 
 echo "Value of variable a is $a"
 
-echo "Todays date is : $DT"
+echo "Todays date is : $dt"
