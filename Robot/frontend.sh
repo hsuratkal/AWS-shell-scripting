@@ -1,8 +1,8 @@
 #!/bin/bash
 
-UID=$(id -u)
+ID=$(id -u)
 
-if [ $UID -ne 0 ] ; then
+if [ $ID -ne 0 ] ; then
    echo -e "\e[31m You need to run the script as a root user or with a sudo privilege\e[0m"
    exit 1
 fi 
