@@ -15,7 +15,7 @@ else
     echo -e "\e[31mFailure\e[0m"
 fi
 
-echo "Starting Nginx :"
+echo -n "Starting Nginx :"
 systemctl enable nginx   &>> /tmp/frontend.log
 systemctl start nginx    &>> /tmp/frontend.log
 if [ $? -eq 0 ] ; then
