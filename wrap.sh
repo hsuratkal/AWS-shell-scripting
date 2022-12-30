@@ -1,3 +1,3 @@
 #!/bin/bash
 
-bash $1.sh
+bash robot/$1.sh
