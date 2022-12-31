@@ -5,4 +5,4 @@ mongodb:
 	bash Robot/mongodb.sh
 
 catalogue:
-	echo "I am catalogue"
+	bash Robot/catalogue.sh
