@@ -2,7 +2,7 @@ frontend:
 	bash Robot/frontend.sh
 
 mongodb:
-	echo "I am mongodb"
+	bash Robot/mongodb.sh
 
 catalogue:
 	echo "I am catalogue"
