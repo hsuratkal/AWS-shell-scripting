@@ -14,13 +14,13 @@ fi
 
 stat() {
     if [ $1 -eq 0 ] ; then
-        echo -e "\e[32mSuccess\e[0m"
+        echo -e "\e[32mSuccess\e[0m "
     else
-        echo -e "\e[31mFailure\e[0m"
+        echo -e "\e[31mFailure\e[0m "
     fi    
 }
 
-echo -n "\e[32m ________ $COMPONENT Configuration is Starting _______ \e[0m"
+echo -e "\e[32m ________ $COMPONENT Configuration is Starting _______ \e[0m"
 
 
 echo -n "Installing Nginx : "
@@ -57,4 +57,4 @@ systemctl enable nginx   &>> $LOGFILE
 systemctl restart nginx    &>> $LOGFILE
 stat $?
 
-echo -n "\e[32m ________ $COMPONENT Configuration Completed _______ \e[0m"
+echo -e "\e[32m ________ $COMPONENT Configuration Completed _______ \e[0m"
