@@ -22,6 +22,7 @@ stat() {
 
 echo -n "\e[32m ________ $COMPONENT Configuration is Starting _______ \e[0m"
 
+
 echo -n "Installing Nginx : "
 yum install nginx -y     &>> $LOGFILE
 stat $?
