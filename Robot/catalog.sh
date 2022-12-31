@@ -2,7 +2,7 @@
 
 set -e
 
-COMPONENT=catalogue
+COMPONENT=catalog
 
 source Robot/common.sh  # Source loads a file and this file all the common patterns
 
