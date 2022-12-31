@@ -16,16 +16,16 @@ stat() {
         echo -e "\e[31mFailure\e[0m"
     fi    
 }
-echo -n "Installing Nginx :"
+echo -n "Installing Nginx : "
 yum install nginx -y     &>> /tmp/frontend.log
 stat $?
 
-echo -n "Starting Nginx :"
+echo -n "Starting Nginx : "
 systemctl enable nginx   &>> /tmp/frontend.log
 systemctl start nginx    &>> /tmp/frontend.log
 stat $?
 
-echo -n "Downloading the $COMPONENT"
+echo -n "Downloading the $COMPONENT : "
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/$COMPONENT/archive/main.zip"
 stat $?
 
