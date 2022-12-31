@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 COMPONENT=frontend
 
 ID=$(id -u)
