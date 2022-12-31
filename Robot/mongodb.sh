@@ -6,6 +6,8 @@ COMPONENT=mongodb
 
 source Robot/common.sh  # Source loads a file and this file all the common patterns
 
+echo -e "\e[32m ________ $COMPONENT Configuration is Starting _______ \e[0m"
+
 echo -n "Downloading $COMPONENT : "
 curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
 stat $?
@@ -35,3 +37,5 @@ cd mongodb-main
 mongo < catalogue.js  &>> $LOGFILE
 mongo < users.js      &>> $LOGFILE
 stat $?
+
+echo -e "\e[32m ________ $COMPONENT Configuration Completed _______ \e[0m"
