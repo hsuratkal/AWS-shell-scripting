@@ -1,2 +1,2 @@
 frontend:
-	bash robot/frontend.sh
+	bash Robot/frontend.sh
