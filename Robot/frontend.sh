@@ -4,7 +4,7 @@ set -e
 
 COMPONENT=frontend
 
-source robot/common.sh  # Source loads a file and this file all the common patterns
+source Robot/common.sh  # Source loads a file and this file all the common patterns
 
 echo -e "\e[32m ________ $COMPONENT Configuration is Starting _______ \e[0m"
 
