@@ -3,6 +3,7 @@
 set -e
 
 COMPONENT=frontend
+LOGFILE=/tmp/$COMPONENT.log
 
 ID=$(id -u)
 
@@ -18,13 +19,16 @@ stat() {
         echo -e "\e[31mFailure\e[0m"
     fi    
 }
+
+echo -n "\e[32m ________ $COMPONENT Configuration is Starting _______ \e[0m"
+
 echo -n "Installing Nginx : "
-yum install nginx -y     &>> /tmp/$COMPONENT.log
+yum install nginx -y     &>> $LOGFILE
 stat $?
 
 echo -n "Starting Nginx : "
-systemctl enable nginx   &>> /tmp/$COMPONENT.log
-systemctl start nginx    &>> /tmp/$COMPONENT.log
+systemctl enable nginx   &>> $LOGFILE
+systemctl start nginx    &>> $LOGFILE
 stat $?
 
 echo -n "Downloading the $COMPONENT : "
@@ -37,17 +41,17 @@ rm -rf *
 stat $?
 
 echo -n "Extracting $COMPONENT : "
-unzip /tmp/$COMPONENT.zip &>> /tmp/$COMPONENT.log
+unzip /tmp/$COMPONENT.zip &>> $LOGFILE
 stat $?
 
 echo -n "Copying $COMPONENT : "
-mv frontend-main/* .  &>> /tmp/$COMPONENT.log
-mv static/* .         &>> /tmp/$COMPONENT.log
-rm -rf frontend-main README.md   &>> /tmp/$COMPONENT.log
-mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> /tmp/$COMPONENT.log 
+mv frontend-main/* .  &>> $LOGFILE
+mv static/* .         &>> $LOGFILE
+rm -rf frontend-main README.md   &>> $LOGFILE
+mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> $LOGFILE 
 stat $?
 
 echo -n "Restarting Nginx : "
-systemctl enable nginx   &>> /tmp/$COMPONENT.log
-systemctl restart nginx    &>> /tmp/$COMPONENT.log
+systemctl enable nginx   &>> $LOGFILE
+systemctl restart nginx    &>> $LOGFILE
 stat $?
