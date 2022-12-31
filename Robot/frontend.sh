@@ -45,3 +45,7 @@ rm -rf frontend-main README.md   &>> /tmp/$COMPONENT.log
 mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> /tmp/$COMPONENT.log 
 stat $?
 
+echo -n "Restarting Nginx : "
+systemctl enable nginx   &>> /tmp/frontend.log
+systemctl restart nginx    &>> /tmp/frontend.log
+stat $?
