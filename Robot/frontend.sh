@@ -19,16 +19,16 @@ stat() {
     fi    
 }
 echo -n "Installing Nginx : "
-yum install nginx -y     &>> /tmp/frontend.log
+yum install nginx -y     &>> /tmp/$COMPONENT.log
 stat $?
 
 echo -n "Starting Nginx : "
-systemctl enable nginx   &>> /tmp/frontend.log
-systemctl start nginx    &>> /tmp/frontend.log
+systemctl enable nginx   &>> /tmp/$COMPONENT.log
+systemctl start nginx    &>> /tmp/$COMPONENT.log
 stat $?
 
 echo -n "Downloading the $COMPONENT : "
-curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/$COMPONENT/archive/main.zip"
+curl -s -L -o /tmp/$COMPONENT.zip "https://github.com/stans-robot-project/$COMPONENT/archive/main.zip"
 stat $?
 
 echo -n "Clearing the default content : "
@@ -37,7 +37,7 @@ rm -rf *
 stat $?
 
 echo -n "Extracting $COMPONENT : "
-unzip /tmp/frontend.zip &>> /tmp/$COMPONENT.log
+unzip /tmp/$COMPONENT.zip &>> /tmp/$COMPONENT.log
 stat $?
 
 echo -n "Copying $COMPONENT : "
@@ -48,6 +48,6 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> /tmp/$COMPONENT.log
 stat $?
 
 echo -n "Restarting Nginx : "
-systemctl enable nginx   &>> /tmp/frontend.log
-systemctl restart nginx    &>> /tmp/frontend.log
+systemctl enable nginx   &>> /tmp/$COMPONENT.log
+systemctl restart nginx    &>> /tmp/$COMPONENT.log
 stat $?
