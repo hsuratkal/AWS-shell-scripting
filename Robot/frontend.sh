@@ -43,4 +43,5 @@ mv frontend-main/* .  &>> /tmp/$COMPONENT.log
 mv static/* .         &>> /tmp/$COMPONENT.log
 rm -rf frontend-main README.md   &>> /tmp/$COMPONENT.log
 mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> /tmp/$COMPONENT.log 
+stat $?
 
