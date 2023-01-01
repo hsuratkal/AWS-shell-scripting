@@ -41,5 +41,6 @@ stat $?
 echo -n "Installing $COMPONENT Dependencies : "
 cd $COMPONENT
 npm install
+stat $?
 
 echo -e "\e[32m ________ $COMPONENT Configuration Completed _______ \e[0m"
