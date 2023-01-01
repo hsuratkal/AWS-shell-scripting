@@ -23,4 +23,23 @@ else
     stat $?   
 fi 
 
+echo -n "Downloading the $COMPONENT : "
+curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
+stat $?
+
+echo -n "Cleanup and Extraction of $COMPONENT : "
+rm -rf /home/$APPUSER/$COMPONENT/
+cd /home/roboshop
+unzip -o /tmp/catalogue.zip &>> "$LOGFILE"
+stat $?
+
+
+
+echo -n "Changing the ownership to $APPUSER : "
+mv /home/$APPUSER/$COMPONENT-main /home/$APPUSER/$COMPONENT
+chown -R $APPUSER:$APPUSER /home/$APPUSER/$COMPONENT
+stat $?
+#npm install
+
+
 echo -e "\e[32m ________ $COMPONENT Configuration Completed _______ \e[0m"
