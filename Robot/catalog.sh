@@ -19,7 +19,8 @@ if [ $? -ne 0 ] ; then
     useradd $APPUSER  &>> "$LOGFILE"
     stat $?
 else
-    echo -e "Application User $APPUSER already exists: "    
+    echo -e "Application User $APPUSER already exists: " 
+    stat $?   
 fi 
 
 echo -e "\e[32m ________ $COMPONENT Configuration Completed _______ \e[0m"
