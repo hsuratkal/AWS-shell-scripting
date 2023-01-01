@@ -40,7 +40,7 @@ stat $?
 
 echo -n "Installing $COMPONENT Dependencies : "
 cd $COMPONENT
-npm install
+npm install &>> "$LOGFILE"
 stat $?
 
 echo -e "\e[32m ________ $COMPONENT Configuration Completed _______ \e[0m"
