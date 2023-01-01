@@ -33,13 +33,13 @@ cd /home/roboshop
 unzip -o /tmp/catalogue.zip &>> "$LOGFILE"
 stat $?
 
-
-
 echo -n "Changing the ownership to $APPUSER : "
 mv /home/$APPUSER/$COMPONENT-main /home/$APPUSER/$COMPONENT
 chown -R $APPUSER:$APPUSER /home/$APPUSER/$COMPONENT
 stat $?
-#npm install
 
+echo -n "Installing $COMPONENT Dependencies : "
+cd $COMPONENT
+npm install
 
 echo -e "\e[32m ________ $COMPONENT Configuration Completed _______ \e[0m"
