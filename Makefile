@@ -4,5 +4,5 @@ frontend:
 mongodb:
 	bash Robot/mongodb.sh
 
-catalog:
+catalogue:
 	bash Robot/catalogue.sh
