@@ -43,4 +43,6 @@ systemctl enable nginx   &>> $LOGFILE
 systemctl restart nginx    &>> $LOGFILE
 stat $?
 
+echo -n "Harish testing"
+
 echo -e "\e[32m ________ $COMPONENT Configuration Completed _______ \e[0m"
