@@ -52,5 +52,6 @@ echo -n "Starting $COMPONENT Service : "
 systemctl daemon-reload        &>> "$LOGFILE"
 systemctl enable catalogue     &>> "$LOGFILE"
 systemctl restart catalogue    &>> "$LOGFILE"
+stat $?
 
 echo -e "\e[32m ________ $COMPONENT Configuration Completed _______ \e[0m"
