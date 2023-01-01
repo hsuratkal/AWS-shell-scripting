@@ -12,14 +12,14 @@ curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash - &>>
 yum install nodejs -y  &>> "$LOGFILE"
 stat $?
 
-echo -n "Checking Application User $APPUSER existence: "
+echo -e "Checking Application User $APPUSER existence: "
 id $APPUSER &>> "$LOGFILE"
 if [ $? -ne 0 ] ; then
-    echo -n "Creating Application User $APPUSER : "
+    echo -e "Creating Application User $APPUSER : "
     useradd $APPUSER  &>> "$LOGFILE"
     stat $?
 else
-    echo -n "Application User $APPUSER already exists: "    
+    echo -e "Application User $APPUSER already exists: "    
 fi 
 
 echo -e "\e[32m ________ $COMPONENT Configuration Completed _______ \e[0m"
