@@ -12,8 +12,8 @@ curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash - &>>
 yum install nodejs -y  &>> "$LOGFILE"
 stat $?
 
-echo -e "Checking Application User $APPUSER existence 1 ... "
-id $APPUSER &>> "$LOGFILE"
+echo -e "Checking Application User $APPUSER existence ... "
+id roboshop &>> "$LOGFILE"
 echo -e "After ID cmd "
 if [ $? -ne 0 ] ; then
     echo -e "Creating Application User $APPUSER : "
