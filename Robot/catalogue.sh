@@ -14,6 +14,7 @@ stat $?
 
 echo -e "Checking Application User $APPUSER existence ... "
 id $APPUSER &>> "$LOGFILE"
+echo -e "After ID cmd "
 if [ $? -ne 0 ] ; then
     echo -e "Creating Application User $APPUSER : "
     useradd $APPUSER  &>> "$LOGFILE"
