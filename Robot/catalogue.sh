@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+#set -e
 
 COMPONENT=catalogue
 source Robot/common.sh  # Source loads a file and this file all the common patterns
