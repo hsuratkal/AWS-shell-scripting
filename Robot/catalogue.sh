@@ -13,7 +13,7 @@ yum install nodejs -y  &>> "$LOGFILE"
 stat $?
 
 echo -e "Checking Application User $APPUSER existence 1 ... "
-id $APPUSER &>> "$LOGFILE"
+#id $APPUSER &>> "$LOGFILE"
 echo -e "After ID cmd "
 if [ $? -ne 0 ] ; then
     echo -e "Creating Application User $APPUSER : "
